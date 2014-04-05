@@ -34,7 +34,7 @@
   Publisher                = {APS}
 }
 
-@PhdThesis{phd,
+@PhdThesis{,
   Title                    = {Techniques and Applications of Quantum Monte Carlo},
   Author                   = {Paul Richard Charles Kent},
   School                   = {Robinson College, Cambridge},
