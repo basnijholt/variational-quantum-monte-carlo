@@ -1,0 +1,186 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+\usepackage{siunitx} % Provides the \SI{}{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage[square, numbers, comma, sort&compress]{natbib}
+\usepackage{caption} 
+\usepackage[section]{placeins}
+\usepackage{amsmath}
+\captionsetup[table]{skip=10pt}
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+% \newgeometry{margin=-1cm}
+% \addtolength{\oddsidemargin}{-.275in}
+% \addtolength{\evensidemargin}{-.275in}
+% \addtolength{\textwidth}{1.75in}
+% 
+% \addtolength{\topmargin}{-.275in}
+% \addtolength{\textheight}{1.75in}
+
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Variational Monte Carlo (VMC) \\ for AP3081 D} % Title
+
+\author{Bas \textsc{Nijholt}} % Author name
+
+\date{\today} % Date for the report
+
+\begin{document}
+
+
+
+\section{Appendix}
+\subsection{Derivation of local energies}
+We will present the derivations for the atoms studied in this report
+To evaluate the local energy we must work out $E_L$ in 
+\begin{equation}
+ \left\langle E \right\rangle = \frac{\int dR \Psi_T^2(R)E_L(R)}{\int dR \Psi_T^2(R)}
+\end{equation}
+in which $E_L$ is
+\begin{equation}
+ E_L(R)=\frac{\hat{H}\Psi_T(R)}{\Psi_T(R)}
+\end{equation}
+
+\begin{equation}
+ \hat{H}=\sum_{i=1}^N \frac{p_i^2}{2m}+\frac12 \sum_{i\ne j=1}^N \frac{e^2}{\left| \mathbf{r}_i -\mathbf{r}_j \right|}+\sum_i V_{e-b}(\mathbf{r}_i)
+\end{equation}
+
+\subsection{Hydrogen molecule H$_2$}
+
+\begin{equation}
+ \hat{H}=-\frac{\hbar}{2m}\left( \nabla_1^2 + \nabla_2^2 \right) - \left[ \frac{ke^2}{\left| \vec{r}_1 + \frac{s}{2} \hat{i} \right|} + \frac{ke^2}{\left| \vec{r}_1 - \frac{s}{2} \hat{i} \right|}  +\frac{ke^2}{\left| \vec{r}_2 + \frac{s}{2} \hat{i} \right|}  +\frac{ke^2}{\left| \vec{r}_2 - \frac{s}{2} \hat{i} \right|} \right] +\frac{ke^2}{\left| \vec{r}_1 + \vec{r}_2 \right|} 
+\end{equation}
+in which the first term is the kinetic energy of the two electrons. The part in the square brackets is the attraction between the nucleus and the electrons and the last term is the Coulomb interaction between the electrons. Setting the constants to unity, and setting $\vec{r}_{1L} = \vec{r}_1 + \frac{s}{2} \hat{i}$, $\vec{r}_{1R} = \vec{r}_1 - \frac{s}{2} \hat{i}$, $\vec{r}_{2L} = \vec{r}_2 + \frac{s}{2} \hat{i}$, $\vec{r}_{1R} = \vec{r}_2 - \frac{s}{2} \hat{i}$ and $\vec{r}_{12} = \vec{r}_1 -\vec{r}_2$ we obtain
+\begin{equation}
+\hat{H}=-\frac{1}{2}\left( \nabla_1^2 + \nabla_2^2 \right) - \left[ \frac{1}{|\vec{r}_{1L}|} +\frac{1}{|\vec{r}_{1R}|}+\frac{1}{|\vec{r}_{2L}|}+\frac{1}{|\vec{r}_{2R}|} \right] +\frac{1}{\left| \vec{r}_{12} \right|} 
+\end{equation}
+In the light of the solvability of this Hamiltonian we split it up in two non-interacting Hamiltonians and a interaction term.
+\begin{equation}
+ \hat{H}=\hat{H}_1 + \hat{H}_2 + \hat{H}_{ee}
+\end{equation}
+
+in which $\hat{H}_1=-\frac{1}{2}\nabla_1^2 - \frac{1}{|\vec{r}_{1L}|} -\frac{1}{|\vec{r}_{1R}|}$, $\hat{H}_2=-\frac{1}{2}\nabla_2^2 - \frac{2}{|\vec{r}_{1L}|} -\frac{2}{|\vec{r}_{2R}|}$ and $\hat{H}_{ee}=\frac{1}{|\vec{r}_{12}|}$
+
+We have chosen our trail variational wave function $\Psi_{T,\alpha}$ to be
+\begin{equation}
+ \Psi_{T}(\vec{r}_1,\vec{r}_2)=\phi(\vec{r}_1)\phi(\vec{r}_2)\psi(\vec{r}_1,\vec{r}_2)
+\end{equation}
+where $\psi(\vec{r}_1,\vec{r}_2)$ is the Jastrow function
+
+\begin{equation}
+\psi(\vec{r}_1,\vec{r}_2) = \psi_{12} = e^{\frac{\left| \vec{r}_{12}  \right|}{\alpha(1+\beta |\vec{r}_{12}|)} }
+\end{equation}
+
+and $\phi(\vec{r}_1)$ and $\phi(\vec{r}_2)$ are
+\begin{equation}
+ \phi(\vec{r}_1) = e^{-|\vec{r}_{1L}|/a} + e^{-|\vec{r}_{1R}|/a} =\phi_1= \phi_{1L} +\phi_{1R}
+\end{equation}
+
+
+\begin{equation}
+ \phi(\vec{r}_2) = e^{-|\vec{r}_{2L}|/a} + e^{-|\vec{r}_{2R}|/a} =\phi_2 = \phi_{2L} +\phi_{2R}
+\end{equation}
+
+\begin{equation}
+ E_L(R)=\frac{\hat{H}\Psi_T(R)}{\Psi_T(R)}=\frac{1}{\phi_1\phi_2\psi_{12}} \hat{H} \phi_1\phi_2\psi_{12}
+\end{equation}
+We let the Hamiltonians only work on correct terms, which results in
+\begin{equation}
+ \frac{1}{\phi_1\phi_2\psi_{12}}(\hat{H}_1 + \hat{H}_2 + \hat{H}_{ee})\phi_1\phi_2\psi_{12}=\frac{1}{\phi_1\psi_{12}}\hat{H}_1 \phi_1\psi_{12} + \frac{1}{\phi_2\psi_{12}}\hat{H}_2 \phi_2\psi_{12} + \frac{1}{|\vec{r}_{12}|}
+\end{equation}
+
+Now we first consider
+\begin{equation}
+ \frac{1}{\phi_1\psi_{12}}\hat{H}_1 \phi_1\psi_{12} = - \frac{1}{\phi_1\psi_{12}} \frac12 \nabla_1^2(\phi_1\psi_{12}) - \frac{1}{|\vec{r}_{1L}|} -\frac{1}{|\vec{r}_{1R}|}
+\end{equation}
+from which we first consider $\nabla_1^2(\phi_1\psi_{12})$, using the chain rule 
+
+\begin{equation}
+\label{master}
+\nabla_1^2(\phi_1\psi_{12}) = \psi_{12}\nabla_1^2\phi_1 + 2 \nabla_1\phi_1 \cdot \nabla_1  \psi_{12} + \phi_1\nabla_1^2\psi_{12}
+\end{equation}
+where
+\begin{equation}
+\label{no1}
+ \nabla_1\phi_1 =-\frac1a \left( e^{-|\vec{r}_{1L}|/a} + e^{-|\vec{r}_{1R}|/a} \right)=-\frac1a \left(  e^{-|\vec{r}_{1L}|/a}\hat{r}_{1L} +e^{-|\vec{r}_{1R}|/a}\hat{r}_{1R} \right)
+\end{equation}
+and \footnote{from now on we will omit the vector signs when it's not ambiguous}
+
+\begin{equation}
+\label{no2}
+ \nabla_1^2\phi_1 =  \left[\frac{1}{a^2}-\frac{2}{a{r}_{1L}} \right] e^{-{r}_{1L}/a} + \left[\frac{1}{a^2}-\frac{2}{a{r}_{1R}} \right] e^{-{r}_{1R}/a} 
+\end{equation}
+
+Similarly we find
+
+\begin{equation}
+\label{no3}
+ \nabla_1 \psi_{12}= \nabla_1 \left( e^{\frac{{r}_{12} }{\alpha(1+\beta {r}_{12})} } \right) = \frac{e^{\frac{r_{12}}{\alpha (\beta r_{12}+1)}}}{\alpha (\beta r_{12}+1)^2}\hat{r}_{12}=\frac{\psi_{12}}{\alpha (\beta r_{12}+1)^2}\hat{r}_{12}
+\end{equation}
+
+and 
+
+\begin{equation}
+\label{no4}
+ \nabla_1^2 \psi_{12}=e^{\frac{r_{12} }{\alpha(1+\beta r_{12} ) }} \frac{2\alpha \beta r_{12} + 2\alpha+r_{12}}{r_{12}\alpha^2(\beta r_{12}+1)^4} =  \frac{(1+2\alpha \beta) r_{12} + 2\alpha}{r_{12}\alpha^2(\beta r_{12}+1)^4} \psi_{12}
+\end{equation}
+
+Now substituting equations \ref{no1}, \ref{no2}, \ref{no3} and \ref{no4} into \ref{master}.
+\begin{multline}
+ \nabla_1^2(\phi_1\psi_{12}) =\psi_{12} \left( \left[\frac{1}{a^2}-\frac{2}{a{r}_{1L}} \right] e^{-{r}_{1L}/a} + \left[\frac{1}{a^2}-\frac{2}{a{r}_{1R}} \right] e^{-{r}_{1R}/a}  \right) +\\ \frac2a \left(  e^{-{r}_{1L}/a}\hat{r}_{1L} +e^{-{r}_{1R}/a}\hat{r}_{1R} \right)\frac{\psi_{12}}{\alpha (\beta r_{12}+1)^2}\hat{r}_{12} \\ +\left( e^{-|\vec{r}_{1L}|/a} + e^{-|\vec{r}_{1R}|/a} \right) \left(   \frac{(1+2\alpha \beta) r_{12} + 2\alpha}{r_{12}\alpha^2(\beta r_{12}+1)^4} \psi_{12} \right)
+\end{multline}
+shuffle to get
+
+\begin{multline}
+ \frac{\nabla_1^2(\phi_1\psi_{12})}{\phi_1 \psi_{12}} =\frac{1}{\phi_1} \left( \left[\frac{1}{a^2}-\frac{2}{ar_{1L}} \right] e^{-r_{1L}/a} + \left[\frac{1}{a^2} - \frac{2}{ar_{1R}} \right] e^{-{r}_{1R}/a}  \right)   
++ \\ \frac{1}{\phi_1 } \left(  e^{-{r}_{1L}/a}\hat{r}_{1L} +e^{-{r}_{1R}/a}\hat{r}_{1R} \right) \cdot \frac{2\hat{r}_{12}}{\alpha a(\beta r_{12}+1)^2}+    \frac{(1+2\alpha \beta) r_{12} 
++ 2\alpha}{r_{12}\alpha^2(\beta r_{12}+1)^4} 
+\end{multline}
+replace the exponents for the corresponding $\phi$ to obtain
+
+\begin{multline}
+\frac{\nabla_1^2(\phi_1\psi_{12})}{\phi_1 \psi_{12}} 
+ = \left( \left[\frac{1}{a^2}-\frac{2}{ar_{1L}} \right] \frac{\phi_{1L}}{\phi_1} + \left[\frac{1}{a^2} - \frac{2}{ar_{1R}} \right] \frac{\phi_{1R}}{\phi_1}   \right)   
+ + \\ \left(  \frac{\phi_{1L}}{\phi_1}\hat{r}_{1L} +\frac{\phi_{1R}}{\phi_1}\hat{r}_{1R} \right) \cdot \frac{2\hat{r}_{12}}{\alpha a(\beta r_{12}+1)^2}+    \frac{(1+2\alpha \beta) r_{12} 
+ + 2\alpha}{r_{12}\alpha^2(\beta r_{12}+1)^4} 
+\end{multline}
+
+in which 
+
+\begin{multline}
+   \left[\frac{1}{a^2}-\frac{2}{a{r}_{1L}} \right] \frac{\phi_{1L}}{\phi_1} + \left[\frac{1}{a^2} - \frac{2}{a{r}_{1R}} \right] \frac{\phi_{1R}}{\phi_1}   \\ = \frac{1}{a^2} \left[ \frac{\phi_{1L}}{\phi_1} + \frac{\phi_{1R}}{\phi_1} \right]-\frac{2}{a\phi_1}\left[ \frac{\phi_{1L}}{r_{1L}}+\frac{\phi_{1R}}{r_{1R}} \right] \\ = \frac{1}{a^2} -\frac{2}{a\phi_1}\left[ \frac{\phi_{1L}}{r_{1L}}+\frac{\phi_{1R}}{r_{1R}} \right]
+\end{multline}
+
+Now adding the equations for the second electron, which are the same \footnote{up to one minus sign} because of the symmetry of the problem, multiplying with 1/2 and adding the Coulomb interation terms to get
+
+\begin{multline}%%%%%%%%%%%%%%%DE MIDDELSTE TERM%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ E_L = -\frac{1}{a^2} -\frac{1}{a\phi_1}\left[ \frac{\phi_{1L}}{r_{1L}}+\frac{\phi_{1R}}{r_{1R}} + \frac{\phi_{2L}}{r_{2L}}+\frac{\phi_{2R}}{r_{2R}}\right]
+ + \\ \left(  \frac{\phi_{1L}}{\phi_1}\hat{r}_{1L} +\frac{\phi_{1R}}{\phi_1}\hat{r}_{1R}   -   \frac{\phi_{2L}}{\phi_2}\hat{r}_{2L} -\frac{\phi_{2R}}{\phi_2}\hat{r}_{2R}     \right)  \cdot \frac{\hat{r}_{12}}{\alpha a(\beta r_{12}+1)^2} \\
+  -   \frac{(1+2\alpha \beta) r_{12} + 2\alpha}{r_{12}\alpha^2(\beta r_{12}+1)^4} 
+  - \left[ \frac{1}{|\vec{r}_{1L}|} +\frac{1}{|\vec{r}_{1R}|}+\frac{1}{|\vec{r}_{2L}|}+\frac{1}{|\vec{r}_{2R}|} \right] +\frac{1}{\left| \vec{r}_{12} \right|} 
+\end{multline}
+with $\alpha=2$
+
+
+ \begin{multline}
+ E_L = -\frac{1}{a^2} -\frac{1}{a\phi_1}\left[ \frac{\phi_{1L}}{r_{1L}}+\frac{\phi_{1R}}{r_{1R}} + \frac{\phi_{2L}}{r_{2L}}+\frac{\phi_{2R}}{r_{2R}}\right]
+ + \\ \left(  \frac{\phi_{1L}\hat{r}_{1L}+\phi_{1R}\hat{r}_{1R}}{\phi_1}   -    \frac{\phi_{2L}\hat{r}_{2L}+\phi_{2R}\hat{r}_{2R}}{\phi_2}     \right) \cdot \frac{\hat{r}_{12}}{2 a(\beta r_{12}+1)^2} \\
+  -   \frac{(1+4 \beta) r_{12} + 4}{4r_{12}(\beta r_{12}+1)^4} 
+  - \left[ \frac{1}{|\vec{r}_{1L}|} +\frac{1}{|\vec{r}_{1R}|}+\frac{1}{|\vec{r}_{2L}|}+\frac{1}{|\vec{r}_{2R}|} \right] +\frac{1}{\left| \vec{r}_{12} \right|} 
+\end{multline}
+
+
+
+
+
+
+\end{document}

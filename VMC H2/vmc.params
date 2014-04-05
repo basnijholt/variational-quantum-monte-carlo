@@ -1,0 +1,3 @@
+30000  steps, total number of MC steps
+4000   eq_steps
+300    Number of walkers (N)
