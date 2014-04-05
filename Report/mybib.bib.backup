@@ -1,0 +1,73 @@
+% This file was created with JabRef 2.10b2.
+% Encoding: UTF-8
+
+@Book{thijssen2007computational,
+  Title                    = {Computational Physics},
+  Author                   = {Thijssen, J.M.},
+  Publisher                = {Cambridge University Press},
+  Year                     = {2007},
+
+  ISBN                     = {9780521833462},
+  Lccn                     = {2006038173},
+  Url                      = {http://books.google.de/books?id=ThtNausKMn4C}
+}
+
+@article{james1933ground,
+  title={The ground state of the hydrogen molecule},
+  author={James, Hubert M and Coolidge, Albert Sprague},
+  journal={The Journal of Chemical Physics},
+  volume={1},
+  number={12},
+  pages={825--835},
+  year={1933},
+  publisher={AIP Publishing}
+}
+
+@article{kolos1960accurate,
+  title = {Accurate Electronic Wave Functions for the H$_2$ Molecule},
+  author = {Kolos, W. and Roothaan, C. C. J.},
+  journal = {Reviews of Modern Physics},
+  volume = {32},
+  issue = {2},
+  pages = {219-232},
+  numpages = {0},
+  year = {1960},
+  month = {Apr},
+  publisher = {American Physical Society},
+  doi = {10.1103/RevModPhys.32.219},
+  url = {http://link.aps.org/doi/10.1103/RevModPhys.32.219}
+}
+
+@article{kolos1963nonadiabatic,
+  title={Nonadiabatic theory for diatomic molecules and its application to the hydrogen molecule},
+  author={Ko{\l}os, W and Wolniewicz, L},
+  journal={Reviews of Modern Physics},
+  volume={35},
+  number={3},
+  pages={473},
+  year={1963},
+  publisher={APS}
+}
+
+@article{kol1965potential,
+  title={Potential-Energy Curves for the $X^1\Sigma_g^+$, $b^3\sigma_u^+$, and $C^1\Pi_u$ states of the Hydrogen Molecule},
+  author={Kol, W and Wolniewicz, L and others},
+  journal={The Journal of Chemical Physics},
+  volume={43},
+  number={7},
+  pages={2429--2441},
+  year={1965},
+  publisher={AIP Publishing}
+}
+
+
+@article{kolos1968improved,
+  title={Improved Theoretical Ground-State Energy of the Hydrogen Molecule},
+  author={Kolos, W and Wolniewicz, L},
+  journal={The Journal of Chemical Physics},
+  volume={49},
+  number={1},
+  pages={404--410},
+  year={1968},
+  publisher={AIP Publishing}
+}

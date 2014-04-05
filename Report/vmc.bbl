@@ -1,3 +1,56 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
+
+\bibitem{griffiths1995introduction}
+David~Jeffrey Griffiths and Edward~G Harris.
+\newblock {\em Introduction to quantum mechanics}, volume~2.
+\newblock Prentice Hall New Jersey, 1995.
+
+\bibitem{james1933ground}
+Hubert~M James and Albert~Sprague Coolidge.
+\newblock The ground state of the hydrogen molecule.
+\newblock {\em The Journal of Chemical Physics}, 1(12):825--835, 1933.
+
+\bibitem{jastrow1955many}
+Robert Jastrow.
+\newblock Many-body problem with strong forces.
+\newblock {\em Physical Review}, 98(5):1479, 1955.
+
+\bibitem{kol1964accurate}
+W~Kol, L~Wolniewicz, et~al.
+\newblock Accurate adiabatic treatment of the ground state of the hydrogen
+  molecule.
+\newblock {\em The Journal of Chemical Physics}, 41(12):3663--3673, 1964.
+
+\bibitem{kol1965potential}
+W~Kol, L~Wolniewicz, et~al.
+\newblock Potential-energy curves for the $x^1\sigma_g^+$, $b^3\sigma_u^+$, and
+  $c^1\pi_u$ states of the hydrogen molecule.
+\newblock {\em The Journal of Chemical Physics}, 43(7):2429--2441, 1965.
+
+\bibitem{kolos1960accurate}
+W.~Kolos and C.~C.~J. Roothaan.
+\newblock Accurate electronic wave functions for the h$_2$ molecule.
+\newblock {\em Reviews of Modern Physics}, 32:219--232, Apr 1960.
+
+\bibitem{kolos1963nonadiabatic}
+W~Kolos and L~Wolniewicz.
+\newblock Nonadiabatic theory for diatomic molecules and its application to the
+  hydrogen molecule.
+\newblock {\em Reviews of Modern Physics}, 35(3):473, 1963.
+
+\bibitem{kolos1968improved}
+W~Kolos and L~Wolniewicz.
+\newblock Improved theoretical ground-state energy of the hydrogen molecule.
+\newblock {\em The Journal of Chemical Physics}, 49(1):404--410, 1968.
+
+\bibitem{sakurai1994modern}
+Jun~John Sakurai and San~Fu Tuan.
+\newblock {\em Modern quantum mechanics}, volume 104.
+\newblock Addison-Wesley Reading (Mass.), 1994.
+
+\bibitem{thijssen2007computational}
+J.M. Thijssen.
+\newblock {\em Computational Physics}.
+\newblock Cambridge University Press, 2007.
 
 \end{thebibliography}

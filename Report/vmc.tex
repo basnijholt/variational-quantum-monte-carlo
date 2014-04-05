@@ -47,7 +47,7 @@ Instructor: & Dr. J.M. Thijssen
 
 % If you wish to include an abstract, uncomment the lines below
 \begin{abstract}
-
+The potential-energy curve for the electronic ground state of the hydrogen molecule has been calculted using the quantum Monte Carlo (QMC) method of solving the Schrödinger equation, with the use of the Born-Oppenheimer or any other adiabatic approximations. The wavefunction sampling was carried out in a 6-dimensional configuration space of the four particles (two electrons and two protons).
 \end{abstract}
 
 %----------------------------------------------------------------------------------------
@@ -55,18 +55,102 @@ Instructor: & Dr. J.M. Thijssen
 %----------------------------------------------------------------------------------------
 
 \section{Introduction}
-In this report we will study simple quantum mechanical systems of particles which have bound states.The simplest such system is the quantum harmonic oscillator in one dimension, with which we start. 
+The determination of energies for molecular systems is a problem of general interest in chemistry and physics. We report here calculations of the ground state energy for the simplest molecular system containing a electron pair bond using the Variational Monte Carlo (VMC) method using the Born-Oppenheimer approximation. Accurate potential energy curves as functions of the inter-atomic distance have been computed for the ground state of the hydrogen molecule. These calculations also provide us with an example of a computationally demanding problem which is well suited for parallel computing. There is a long history of increasingly accurate theoretical calculations of the energy of the hydrogen molecule and increasingly accurate experimental measurements of the dissociation energy. The history of accurate calculations of energies for H$_2$ begins with the 1933 work of James and Coolidge \citep{james1933ground} which represented one of the first successes in solving the Schr\"odinger equation for molecules. In the 1960's, more accurate results for the hydrogen molecule were obtained by Kolos and Roothaan \citep{kolos1960accurate} and by Kolos and Wolniewicz \citep{kolos1963nonadiabatic, kol1964accurate, kol1965potential, kolos1968improved} which established the foundation for future calculations. 
 
+The effectiveness of the VMC method is demonstrated by applying it to a very simple quantum mechanical system, the harmonic oscillator from which we know the exact results.
 
-\subsection{Monte Carlo}
+\section{Variational Monte Carlo}
+Variational Monte Carlo (VMC) is based on a direct application of Monte Carlo integration to explicitly correlated many-body wavefunctions. The variational principle of quantum mechanics, derived in the following section, states that the energy of a trial wavefunction will be greater than or equal to the energy of the exact wavefunction. Optimised forms for many-body wavefunctions enable the accurate determination of expectation values.
 
-\subsection{The variational Monte Carlo method}
-In mathematical physics variational Monte Carlo (VMC) is a quantum Monte Carlo method that applies the variational method to approximate the ground state of the system. In the VMC method we first construct a (many-particle) trail function $\Psi_{T,\alpha}$, which depends on a set of variational parameters $\alpha = (\alpha_1,\;\alpha_2,...,\alpha_S,\; )$. We want to find an efficient way to evaluate the expected value of the energy
+\subsection{Variational principle}
+In quantum mechanics, the variational method is one way of finding approximations to the lowest energy eigenstate or ground state, and some excited states. The basis for this method is the variational principle \citep{griffiths1995introduction, sakurai1994modern}. The method consists in choosing a "trial wavefunction" depending on one or more parameters, and finding the values of these parameters for which the expectation value of the energy is the lowest possible. The wavefunction obtained by fixing the parameters to such values is then an approximation to the ground state wavefunction, and the expectation value of the energy in that state is an upper bound to the ground state energy.
+
+The variational principle of quantum mechanics may be derived by expanding a normalized trial wavefunction, $\psi_{T}$, in terms of the exact normalized eigenstates of the Hamiltonian
+
 \begin{equation}
-\left\langle E \right\rangle = \frac{\left\langle \psi \left| \hat{H} \right|\psi \right\rangle}{\left\langle \psi | \psi \right\rangle}
+ \psi_T=\sum_{i=0}^{\infty} c_{i} \psi_i \;\;\;,
 \end{equation}
 
-where $\psi$ depends on the combined position coordinate $R=(\mathbf{r}_1,...\mathbf{r}_N)$ of all the particles in the system. To approximate this integral we use a Metropolis algorithm in which we place $N$ walkers in a random configuration and push into a natural position% dit even herformuleren!
+where the expansion coefficients, $c_{i}$, are normalised 
+
+\begin{equation}
+\sum_{i=0}^{\infty} \vert c_{i}\vert^2=1 \;\;\;.
+\end{equation}
+
+The expectation of the many-body Hamiltonian, $\hat{H}$, may be evaluated 
+
+\begin{equation}
+ <\psi_T\vert\hat{H}\vert\psi_T > = <\sum_i c_i\psi_i\vert\hat{H}\vert\sum_j c_j\psi_j >
+ = \sum_i \sum_j c_{i}^{*} c_{j}
+ = \sum_i \vert c_{i}\vert^{2} \epsilon_{i}
+\end{equation}
+where 
+\begin{equation}
+ \epsilon_{i} = <\psi_i\vert\hat{H}\vert\psi_i >
+\end{equation}
+
+The expectation value of a trial wavefunction with the Hamiltonian must therefore be greater than or equal to the true ground state energy.
+
+\subsection{Monte Carlo integration}
+Before the expectation value of a trial wavefunction with the many-body Hamiltonian may be computed, the integral must be transformed into a form suitable for Monte Carlo integration. Trial wavefunctions, $\psi_T$, are dependent on the set of $N$ electron positions,  ${\bf R}=\{{\bf r}_1,{\bf r}_2, \ldots {\bf r}_N\}$. The expectation value is given by
+
+\begin{equation}
+E=\frac{\int \psi_{T}^{*}\hat{H}\psi_{T} d{\bf R}}
+{\int \psi_{T}^{*}\psi_{T}d{\bf R}}
+\end{equation}
+
+which may be rewritten in an importance sampled form in terms of the probability density  $\vert\psi_{T}\vert^{2}$ as
+
+\begin{equation}
+E=\frac{\int \vert\psi_{T}\vert^{2}\frac{\hat{H}\psi_{T}}{\psi_{T}} d{\bf R}}
+{\int \vert\psi_{T}\vert^{2}d{\bf R}}
+\end{equation}
+
+The Metropolis algorithm samples configurations - sets of electron positions ${\bf R}$ - from the probability distribution  $\vert\psi_{T}\vert^{2}$, and the variational energy is obtained by averaging the ''local energy'' $E_{L}$ over the set of configurations $\{{\bf R}\}$ as 
+
+\begin{equation}
+\label{E_local}
+E_{L}({\bf R})=\frac{\hat{H}\psi_{T}({\bf R})}{\psi_{T}({\bf R})}
+\end{equation}
+
+and 
+
+\begin{equation}
+E=\frac{1}{N} \sum E_{L}({\bf R}_i) \;\;\;.
+\end{equation}
+
+\subsection{The local energy}
+
+The local energy,  $E_{L}({\bf R})$, equation \ref{E_local} is one of the central quantities in quantum Monte Carlo (QMC) methods. It occurs in both the variational and diffusion Monte Carlo algorithms and its properties are exploited to optimise trial wavefunctions. The local energy has the useful property that for an exact eigenstate of the Hamiltonian, the local energy is constant. For a general trial wavefunction the local energy is not constant and the variance of the local energy is a measure of how well the trial wavefunction approximates an eigenstate. 
+
+Determination of the local energy is one of the most computationally costly operations performed in QMC calculations. Application of the Hamiltonian to the trial wavefunction requires computation of the second derivatives of the wavefunction and the calculation of the electron-electron and electron-ion potentials.
+
+\subsection{Trail wavefunction}
+
+The choice of trial wavefunction is critical in VMC calculations. All observables are evaluated with respect to the probability distribution  $\vert\Psi_T({\bf R})\vert^2$. The trial wavefunction,  $\Psi_T({\bf R})$, must well approximate an exact eigenstate for all ${\bf R}$ in order that accurate results are obtained. Improved trial wavefunctions also improve the importance sampling, reducing the cost of obtaining a certain statistical accuracy.
+Quantum Monte Carlo methods are able to exploit trial wavefunctions of arbitrary forms. Any wavefunction that is physical and for which the value, gradient and Laplacian of the wavefunction may be efficiently computed can be used.
+
+The power of Quantum Monte Carlo methods lies in the flexibility of the form of the trial wavefunction. In early studies the wavefunction was taken to be a Jastrow function \citep{jastrow1955many} which is of the form
+
+\begin{equation}
+\psi=\exp \left[ \sum_{i<j}^{N} -u(r_{ij}) \right] \;\;\;.
+\end{equation}
+
+\subsection{The VMC algorithm}
+The VMC algorithm consists of two distinct phases. In the first a walker consisting of an initially random set of electron positions is propagated according to the Metropolis algorithm, in order to equilibrate it and begin sampling $\vert\Psi\vert^2$. In the second phase, the walker continues to be moved, but energies and other observables are also accumulated for later averaging and statistical analysis. The procedure is as follows \citep{thijssen2007computational}.
+
+  \begin{enumerate}
+    \item Generate initial configuration using random positions for the electrons
+    \item For every electron in the configuration:
+    \begin{enumerate}
+     \item Propose a move from ${\bf r}$ to  ${\bf r}^\prime$
+     \item Compute  $w=\vert\Psi({\bf r}^\prime)/\Psi({\bf r})\vert^2$
+     \item Accept or reject move according to Metropolis probability $\mathrm{min}(1,w)$
+     \item After equilibration phase accumulate the contribution to the local energy
+    \end{enumerate}
+    \item Repeat step 2 until sufficient data accumulated 
+  \end{enumerate}
+
 \subsection{Harmonic oscillator}
 \subsection{Hydrogen atom}
 \subsection{Helium atom}

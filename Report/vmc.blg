@@ -1,53 +1,46 @@
 This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: vmc.aux
-I couldn't open database file mybib.bib
----line 5 of file vmc.aux
- : \bibdata{mybib
- :               }
-I'm skipping whatever remains of this command
 The style file: plain.bst
-I found no \citation commands---while reading file vmc.aux
-I found no database files---while reading file vmc.aux
-You've used 0 entries,
+Database file #1: mybib.bib
+You've used 10 entries,
             2118 wiz_defined-function locations,
-            497 strings with 3984 characters,
-and the built_in function-call counts, 18 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 7
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
+            562 strings with 5265 characters,
+and the built_in function-call counts, 3048 in all, are:
+= -- 297
+> -- 128
+< -- 2
++ -- 51
+- -- 40
+* -- 219
+:= -- 524
+add.period$ -- 30
+call.type$ -- 10
+change.case$ -- 45
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
+cite$ -- 10
+duplicate$ -- 113
+empty$ -- 252
+format.name$ -- 40
+if$ -- 625
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+int.to.str$ -- 10
+missing$ -- 13
+newline$ -- 53
+num.names$ -- 20
+pop$ -- 44
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 38
 quote$ -- 0
-skip$ -- 1
+skip$ -- 76
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
+substring$ -- 205
+swap$ -- 12
+text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
+type$ -- 34
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
-(There were 3 error messages)
+while$ -- 31
+width$ -- 12
+write$ -- 111

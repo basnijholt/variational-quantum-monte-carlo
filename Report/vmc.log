@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.2.20)  20 MAR 2014 14:01
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.3.2)  5 APR 2014 19:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -584,32 +584,31 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 \c__siunitx_mathsf_int=\count155
 \c__siunitx_mathtt_int=\count156
+Missing character: There is no Ã in font cmr9!
+Missing character: There is no ¶ in font cmr9!
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./vmc.bbl
-
-Package natbib Warning: Empty `thebibliography' environment on input line 3.
-
-)
-Overfull \hbox (14.31012pt too wide) detected at line 133
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] (./vmc.bbl
+[4]) [5]
+Overfull \hbox (14.31012pt too wide) detected at line 217
 [] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@[] [] ^^@ [] \OT1/cmr/m/n/10 + []
  []
 
-[2] [3] [4]
+[6] [7]
 
 Package caption Warning: Unused \captionsetup[table] on input line 16.
 See the caption package documentation for explanation.
 
-[5] (./vmc.aux) ) 
+[8] (./vmc.aux) ) 
 Here is how much of TeX's memory you used:
- 11775 strings out of 493307
- 250194 string characters out of 6139905
- 260545 words of memory out of 5000000
- 15090 multiletter control sequences out of 15000+600000
- 13992 words of font info for 52 fonts, out of 8000000 for 9000
+ 11809 strings out of 493307
+ 251021 string characters out of 6139906
+ 260704 words of memory out of 5000000
+ 15123 multiletter control sequences out of 15000+600000
+ 14338 words of font info for 53 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,10n,38p,528b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,10n,38p,1347b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12
 .pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
@@ -624,13 +623,15 @@ ic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on vmc.pdf (5 pages, 191387 bytes).
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on vmc.pdf (8 pages, 238817 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 111 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
