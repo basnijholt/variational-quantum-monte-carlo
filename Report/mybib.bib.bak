@@ -10,6 +10,18 @@
   Volume                   = {2}
 }
 
+@Article{herzberg1970dissociation,
+  Title                    = {The dissociation energy of the hydrogen molecule},
+  Author                   = {Herzberg, G},
+  Journal                  = {Journal of Molecular Spectroscopy},
+  Year                     = {1970},
+  Number                   = {1},
+  Pages                    = {147--168},
+  Volume                   = {33},
+
+  Publisher                = {Elsevier}
+}
+
 @Article{james1933ground,
   Title                    = {The ground state of the hydrogen molecule},
   Author                   = {James, Hubert M and Coolidge, Albert Sprague},
@@ -34,7 +46,7 @@
   Publisher                = {APS}
 }
 
-@PhdThesis{,
+@PhdThesis{phd,
   Title                    = {Techniques and Applications of Quantum Monte Carlo},
   Author                   = {Paul Richard Charles Kent},
   School                   = {Robinson College, Cambridge},
@@ -117,6 +129,30 @@
   Volume                   = {104}
 }
 
+@Article{stwalley1970dissociation,
+  Title                    = {The dissociation energy of the hydrogen molecule using long-range forces},
+  Author                   = {Stwalley, WC},
+  Journal                  = {Chemical Physics Letters},
+  Year                     = {1970},
+  Number                   = {3},
+  Pages                    = {241--244},
+  Volume                   = {6},
+
+  Publisher                = {Elsevier}
+}
+
+@Article{szalewicz1986new,
+  Title                    = {New Born--Oppenheimer potential energy curve and vibrational energies for the electronic ground state of the hydrogen molecule},
+  Author                   = {Szalewicz, Krzysztof and Monkhorst, Hendrik J and others},
+  Journal                  = {The Journal of chemical physics},
+  Year                     = {1986},
+  Number                   = {6},
+  Pages                    = {3278--3283},
+  Volume                   = {84},
+
+  Publisher                = {AIP Publishing}
+}
+
 @Book{thijssen2007computational,
   Title                    = {Computational Physics},
   Author                   = {Thijssen, J.M.},
@@ -126,5 +162,29 @@
   ISBN                     = {9780521833462},
   Lccn                     = {2006038173},
   Url                      = {http://books.google.de/books?id=ThtNausKMn4C}
+}
+
+@Article{traynor1991quantum,
+  Title                    = {A quantum Monte Carlo calculation of the ground state energy of the hydrogen molecule},
+  Author                   = {Traynor, Carol A and Anderson, James B and Boghosian, Bruce M},
+  Journal                  = {The Journal of chemical physics},
+  Year                     = {1991},
+  Number                   = {5},
+  Pages                    = {3657--3664},
+  Volume                   = {94},
+
+  Publisher                = {AIP Publishing}
+}
+
+@Article{wolniewicz1983x,
+  Title                    = {The X 1$\Sigma$+ g state vibration-rotational energies of the H2, HD, and D2 molecules},
+  Author                   = {Wolniewicz, L},
+  Journal                  = {The Journal of Chemical Physics},
+  Year                     = {1983},
+  Number                   = {10},
+  Pages                    = {6173--6181},
+  Volume                   = {78},
+
+  Publisher                = {AIP Publishing}
 }
 

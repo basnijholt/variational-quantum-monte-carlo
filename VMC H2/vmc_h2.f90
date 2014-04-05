@@ -54,12 +54,12 @@ subroutine parameters
     alpha = 2._8                  ! constant
     gamma = 1.0_8                 ! damping factor
 
-    steps = 50000                 ! # of MC steps
-    eq_steps = 5000               ! # of equilibrium steps
-    N = 500                       ! # of walkers
+    steps = 100000                 ! # of MC steps
+    eq_steps = 10000               ! # of equilibrium steps
+    N = 1000                       ! # of walkers
     N_s = 25                      ! # of proton-proton distances
-    s_min = 1.3_8!.7_8                  ! minimum proton-proton distance
-    s_max = 1.5_8!4.5_8                 ! maximum proton-proton distance
+    s_min = 1.375_8!.7_8                  ! minimum proton-proton distance
+    s_max = 1.43_8!4.5_8                 ! maximum proton-proton distance
     minimization_steps = 25       ! # of steps in which beta is optimized for a minimal energy 
 !     open(14, file='vmc.params')
 !     read(14, *) steps
