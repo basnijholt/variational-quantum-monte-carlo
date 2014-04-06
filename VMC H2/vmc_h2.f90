@@ -56,10 +56,10 @@ subroutine parameters
 
     steps = 100000                 ! # of MC steps
     eq_steps = 10000               ! # of equilibrium steps
-    N = 1000                       ! # of walkers
-    N_s = 25                      ! # of proton-proton distances
-    s_min = 1.375_8!.7_8                  ! minimum proton-proton distance
-    s_max = 1.43_8!4.5_8                 ! maximum proton-proton distance
+    N = 2000                       ! # of walkers
+    N_s = 10                      ! # of proton-proton distances
+    s_min = 1.395_8!.7_8                  ! minimum proton-proton distance
+    s_max = 1.425_8!4.5_8                 ! maximum proton-proton distance
     minimization_steps = 25       ! # of steps in which beta is optimized for a minimal energy 
 !     open(14, file='vmc.params')
 !     read(14, *) steps
