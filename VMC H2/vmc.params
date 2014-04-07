@@ -1,3 +1,7 @@
 30000  steps, total number of MC steps
 4000   eq_steps
 300    Number of walkers (N)
+50     N_s Number of steps in distance from s_min to s_max
+0.5    s_min 
+6.5    s_max
+20     minimization steps, trying different beta's

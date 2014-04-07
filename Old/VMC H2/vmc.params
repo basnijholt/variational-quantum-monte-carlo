@@ -1,6 +1,0 @@
-100000  steps, total number of MC steps
-10000   eq_steps
-300   Number of walkers (N)
-1     Number of s (N_s)  
-0.35   s_min
-1.00   s_max

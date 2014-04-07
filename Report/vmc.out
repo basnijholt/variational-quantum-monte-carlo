@@ -1,0 +1,15 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Variational Monte Carlo}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Variational principle}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Monte Carlo integration}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Calculation procedure}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{The local energy}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.5}{Trail wavefunction}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.6}{Hydrogen molecule \(H2\)}{section.2}% 8
+\BOOKMARK [1][-]{section.3}{Results and discussion}{}% 9
+\BOOKMARK [1][-]{section.4}{Appendix}{}% 10
+\BOOKMARK [2][-]{subsection.4.1}{Derivation of local energies}{section.4}% 11
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Harmonic oscillator}{subsection.4.1}% 12
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Hydrogen molecule H2}{subsection.4.1}% 13
+\BOOKMARK [2][-]{subsection.4.2}{Coulomb cusp condition}{section.4}% 14
+\BOOKMARK [1][-]{section.5}{The use of my program}{}% 15

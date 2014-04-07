@@ -53,6 +53,12 @@ W~Kolos and L~Wolniewicz.
 \newblock Improved theoretical ground-state energy of the hydrogen molecule.
 \newblock {\em The Journal of Chemical Physics}, 49(1):404--410, 1968.
 
+\bibitem{morse1929diatomic}
+Philip~M Morse.
+\newblock Diatomic molecules according to the wave mechanics. ii. vibrational
+  levels.
+\newblock {\em Physical Review}, 34(1):57, 1929.
+
 \bibitem{sakurai1994modern}
 Jun~John Sakurai and San~Fu Tuan.
 \newblock {\em Modern quantum mechanics}, volume 104.
@@ -86,5 +92,10 @@ L~Wolniewicz.
 \newblock The x 1$\sigma$+ g state vibration-rotational energies of the h2, hd,
   and d2 molecules.
 \newblock {\em The Journal of Chemical Physics}, 78(10):6173--6181, 1983.
+
+\bibitem{wolniewicz1995nonadiabatic}
+L~Wolniewicz.
+\newblock Nonadiabatic energies of the ground state of the hydrogen molecule.
+\newblock {\em The Journal of chemical physics}, 103(5):1792--1799, 1995.
 
 \end{thebibliography}

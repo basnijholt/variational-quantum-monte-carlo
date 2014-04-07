@@ -5,7 +5,6 @@ program vmc_h2
     real(8), allocatable :: E(:), x(:, :, :), dphidbeta(:), E_dphidbeta(:), s_vector(:), E_array(:,:), beta_array(:,:), E_all(:,:), E_all_var(:,:)
     real(8) :: beta, alpha, gamma, s, s_min, s_max, a
     integer :: steps, eq_steps, N, N_s, electrons, i, j, minimization_steps
-
     call parameters
     call init_random_seed()
     
@@ -28,6 +27,17 @@ program vmc_h2
   contains
 
 !----------------------------------------------------------------------------!
+subroutine save_and_print(i, j, E, beta)
+    real(8), intent(in) :: E(:), beta
+    integer, intent(in) :: i, j
+    if (j == minimization_steps) E_array(i,:) = E
+    beta_array(i,j) = beta
+    E_all(i,j) = avg(E(eq_steps:steps))
+    E_all_var(i,j) = var(E(eq_steps:steps))
+end subroutine
+!----------------------------------------------------------------------------!
+
+!----------------------------------------------------------------------------!
 subroutine initialize_walkers(x)
     real(8), intent(inout) :: x(:,:,:)
     call random_number(x)
@@ -42,7 +52,7 @@ subroutine new_beta(i, j, beta, E, dphidbeta, E_dphidbeta)
     integer, intent(in) :: i, j
     print '(a,1I2,1I2)',      'i,j:    ', i,j
     print *,         'beta:   ', beta
-    print *,         'energy: ', avg(E(eq_steps:steps))
+    print *,         'energy: ', avg(E(eq_steps:steps))!, var(E(eq_steps:steps))
     print *,         ' '
     beta = beta - gamma*2*( avg(E_dphidbeta(eq_steps:steps)) - avg(E(eq_steps:steps)) * avg(dphidbeta(eq_steps:steps)) )
 end subroutine
@@ -51,16 +61,16 @@ end subroutine
 !----------------------------------------------------------------------------!
 subroutine parameters
     electrons = 2                 ! # of electrons in Helium
-    alpha = 2._8                  ! constant
+    alpha = 2._8
     gamma = 1.0_8                 ! damping factor
 
-    steps = 100000                 ! # of MC steps
-    eq_steps = 10000               ! # of equilibrium steps
-    N = 2000                       ! # of walkers
-    N_s = 5                      ! # of proton-proton distances
-    s_min = 1.405_8!.7_8                  ! minimum proton-proton distance
-    s_max = 1.415_8!4.5_8                 ! maximum proton-proton distance
-    minimization_steps = 25       ! # of steps in which beta is optimized for a minimal energy 
+    steps = 100000
+    eq_steps = 10000
+    N = 1000
+    N_s = 60
+    s_min = .5_8
+    s_max = 6.5_8
+    minimization_steps = 20
 !     open(14, file='vmc.params')
 !     read(14, *) steps
 !     read(14, *) eq_steps
@@ -118,6 +128,32 @@ end subroutine
 !----------------------------------------------------------------------------!  
 
 !----------------------------------------------------------------------------!  
+subroutine print_all(switch)       
+    integer :: switch
+    character(30) :: fmtstring
+    
+    if (switch == 1) then
+      write (fmtstring, '(a,I2,a)') '(',N_s,'F10.5)'
+      open(11, file='E.dat')
+      write (11, fmtstring) E_array(:,eq_steps:steps)
+      open(12, file='data_int.dat')
+      write(12, '(1I8)') N, steps, eq_steps, N_s, minimization_steps
+      open(13, file='data_float.dat')
+      write(13, '(1F10.6)') s_min, s_max
+      open(14, file='s.dat')
+      write(14, '(1F10.6)') s_vector
+      open(15, file='beta.dat')
+      write(15, fmtstring) beta_array
+      open(16, file='E_all.dat')
+      write(16, fmtstring) E_all
+      open(17, file='E_all_var.dat')
+      write(17, fmtstring) E_all_var      
+    end if
+
+end subroutine
+!----------------------------------------------------------------------------! 
+
+!----------------------------------------------------------------------------!  
 subroutine r(x, a, s, r1, r1_L, r1_L_abs, r1_R, r1_R_abs, r2, r2_L, r2_L_abs, r2_R, r2_R_abs, r12, r12_abs, phi_1_L, phi_1_R, phi_1, phi_2_L, phi_2_R, phi_2)
     real(8), intent(in) :: x(:,:,:), a, s
     real(8), dimension(3,N), intent(out) :: r1, r1_L, r1_R, r2, r2_L, r2_R, r12
@@ -168,7 +204,6 @@ subroutine E_local(x, a, s, beta, E, dphidbeta, E_dphidbeta)
     r2_L_hat = r2_L/spread(r2_L_abs,1,3)
     r2_R_hat = r2_R/spread(r2_R_abs,1,3)
     r12_hat = r12/spread(r12_abs,1,3)
-
     E1 = -1._8/a**2
     E2 = (phi_1_L/r1_L_abs+phi_1_R/r1_R_abs)/(a*phi_1)
     E3 = (phi_2_L/r2_L_abs+phi_2_R/r2_R_abs)/(a*phi_2)
@@ -201,43 +236,5 @@ function transition_probability(x, a, s, beta)
     transition_probability = phi_1*phi_2*exp( r12_abs/(alpha*(1._8+beta*r12_abs)) )
     
 end function
-!----------------------------------------------------------------------------!
-
 !----------------------------------------------------------------------------!  
-subroutine print_all(switch)       
-    integer :: switch
-    character(30) :: fmtstring
-    
-    if (switch == 1) then
-      write (fmtstring, '(a,I2,a)') '(',N_s,'F13.9)'
-      open(11, file='E.dat')
-      write (11, fmtstring) E_array(:,eq_steps:steps)
-      open(12, file='data_int.dat')
-      write(12, '(1I8)') N, steps, eq_steps, N_s, minimization_steps
-      open(13, file='data_float.dat')
-      write(13, '(1F10.6)') s_min, s_max
-      open(14, file='s.dat')
-      write(14, '(1F10.6)') s_vector
-      open(15, file='beta.dat')
-      write(15, fmtstring) beta_array
-      open(16, file='E_all.dat')
-      write(16, fmtstring) E_all
-      open(17, file='E_all_var.dat')
-      write(17, fmtstring) E_all_var      
-    end if
-
-end subroutine
-!----------------------------------------------------------------------------! 
-
-!----------------------------------------------------------------------------!
-subroutine save_and_print(i, j, E, beta)
-    real(8), intent(in) :: E(:), beta
-    integer, intent(in) :: i, j
-    if (j == minimization_steps) E_array(i,:) = E
-    beta_array(i,j) = beta
-    E_all(i,j) = avg(E(eq_steps:steps))
-    E_all_var(i,j) = var(E(eq_steps:steps))
-end subroutine
-!----------------------------------------------------------------------------!
-  
 end program vmc_h2
