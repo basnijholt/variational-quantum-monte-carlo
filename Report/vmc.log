@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.3.2)  7 APR 2014 21:21
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.3.2)  8 APR 2014 11:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -626,71 +626,71 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
  []
 
-[2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 129--131
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 127--128
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--147
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
+
+ []
+
+[4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 192--194
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
 
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 160--161
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 162--163
-
- []
-
-[5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 236--237
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
 
  []
 
 <plot.pdf, id=44, 633.2659pt x 484.209pt>
 File: plot.pdf Graphic file (type pdf)
  <use plot.pdf>
-Package pdftex.def Info: plot.pdf used on input line 240.
+Package pdftex.def Info: plot.pdf used on input line 239.
 (pdftex.def)             Requested size: 345.0pt x 263.79631pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--251
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
 
  []
 
 [7] [8 <./plot.pdf>] (./vmc.bbl [9]
-Underfull \hbox (badness 1087) in paragraph at lines 74--78
+Underfull \hbox (badness 1087) in paragraph at lines 79--83
 \OT1/cmr/m/n/10 state of the hy-dro-gen molecule.  \OT1/cmr/m/it/10 The Jour-na
 l of chem-i-cal physics\OT1/cmr/m/n/10 ,
  []
 
 [10])
-Overfull \hbox (14.31012pt too wide) detected at line 351
+Overfull \hbox (14.31012pt too wide) detected at line 349
 [] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@[] [] ^^@ [] \OT1/cmr/m/n/10 + []
  []
 
 [11] [12] [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 498--499
+Underfull \hbox (badness 10000) in paragraph at lines 496--497
 
  []
 
 [15] (./vmc.aux) ) 
 Here is how much of TeX's memory you used:
- 11919 strings out of 493307
- 252697 string characters out of 6139906
- 262713 words of memory out of 5000000
- 15223 multiletter control sequences out of 15000+600000
+ 11923 strings out of 493307
+ 252774 string characters out of 6139906
+ 261729 words of memory out of 5000000
+ 15227 multiletter control sequences out of 15000+600000
  15649 words of font info for 58 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,11n,38p,1295b,760s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,11n,38p,1302b,760s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx1
 2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><
@@ -714,7 +714,7 @@ ts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type
 c/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmti10.pfb>
-Output written on vmc.pdf (15 pages, 339856 bytes).
+Output written on vmc.pdf (15 pages, 341895 bytes).
 PDF statistics:
  245 PDF objects out of 1000 (max. 8388607)
  121 compressed objects within 2 object streams

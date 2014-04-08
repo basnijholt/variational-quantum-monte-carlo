@@ -1,6 +1,158 @@
 % This file was created with JabRef 2.10b2.
 % Encoding: UTF-8
 
+
+@Book{griffiths1995introduction,
+  Title                    = {Introduction to quantum mechanics},
+  Author                   = {Griffiths, David Jeffrey and Harris, Edward G},
+  Publisher                = {Prentice Hall New Jersey},
+  Year                     = {1995},
+  Volume                   = {2}
+}
+
+@Article{herzberg1970dissociation,
+  Title                    = {The dissociation energy of the hydrogen molecule},
+  Author                   = {Herzberg, G},
+  Journal                  = {Journal of Molecular Spectroscopy},
+  Year                     = {1970},
+  Number                   = {1},
+  Pages                    = {147--168},
+  Volume                   = {33},
+
+  Publisher                = {Elsevier}
+}
+
+@Article{james1933ground,
+  Title                    = {The ground state of the hydrogen molecule},
+  Author                   = {James, Hubert M and Coolidge, Albert Sprague},
+  Journal                  = {The Journal of Chemical Physics},
+  Year                     = {1933},
+  Number                   = {12},
+  Pages                    = {825--835},
+  Volume                   = {1},
+
+  Publisher                = {AIP Publishing}
+}
+
+@Article{jastrow1955many,
+  Title                    = {Many-body problem with strong forces},
+  Author                   = {Jastrow, Robert},
+  Journal                  = {Physical Review},
+  Year                     = {1955},
+  Number                   = {5},
+  Pages                    = {1479},
+  Volume                   = {98},
+
+  Publisher                = {APS}
+}
+
+@PhdThesis{phd,
+  Title                    = {Techniques and Applications of Quantum Monte Carlo},
+  Author                   = {Paul Richard Charles Kent},
+  School                   = {Robinson College, Cambridge},
+  Year                     = {1999},
+
+  Owner                    = {bas},
+  Timestamp                = {2014.04.05}
+}
+
+@Article{kol1965potential,
+  Title                    = {Potential-Energy Curves for the $X^1\Sigma_g^+$, $b^3\sigma_u^+$, and $C^1\Pi_u$ states of the Hydrogen Molecule},
+  Author                   = {Kol, W and Wolniewicz, L and others},
+  Journal                  = {The Journal of Chemical Physics},
+  Year                     = {1965},
+  Number                   = {7},
+  Pages                    = {2429--2441},
+  Volume                   = {43},
+
+  Publisher                = {AIP Publishing}
+}
+
+@Article{kol1964accurate,
+  Title                    = {Accurate adiabatic treatment of the ground state of the hydrogen molecule},
+  Author                   = {Kol, W and Wolniewicz, L and others},
+  Journal                  = {The Journal of Chemical Physics},
+  Year                     = {1964},
+  Number                   = {12},
+  Pages                    = {3663--3673},
+  Volume                   = {41},
+
+  Publisher                = {AIP Publishing}
+}
+
+@Article{kolos1960accurate,
+  Title                    = {Accurate Electronic Wave Functions for the H$_2$ Molecule},
+  Author                   = {Kolos, W. and Roothaan, C. C. J.},
+  Journal                  = {Reviews of Modern Physics},
+  Year                     = {1960},
+
+  Month                    = {Apr},
+  Pages                    = {219-232},
+  Volume                   = {32},
+
+  Doi                      = {10.1103/RevModPhys.32.219},
+  Issue                    = {2},
+  Numpages                 = {0},
+  Publisher                = {American Physical Society},
+  Url                      = {http://link.aps.org/doi/10.1103/RevModPhys.32.219}
+}
+
+@Article{kolos1968improved,
+  Title                    = {Improved Theoretical Ground-State Energy of the Hydrogen Molecule},
+  Author                   = {Kolos, W and Wolniewicz, L},
+  Journal                  = {The Journal of Chemical Physics},
+  Year                     = {1968},
+  Number                   = {1},
+  Pages                    = {404--410},
+  Volume                   = {49},
+
+  Publisher                = {AIP Publishing}
+}
+
+@Article{kolos1963nonadiabatic,
+  Title                    = {Nonadiabatic theory for diatomic molecules and its application to the hydrogen molecule},
+  Author                   = {Kolos, W and Wolniewicz, L},
+  Journal                  = {Reviews of Modern Physics},
+  Year                     = {1963},
+  Number                   = {3},
+  Pages                    = {473},
+  Volume                   = {35},
+
+  Publisher                = {APS}
+}
+
+@Book{sakurai1994modern,
+  Title                    = {Modern quantum mechanics},
+  Author                   = {Sakurai, Jun John and San Fu Tuan},
+  Publisher                = {Addison-Wesley Reading (Mass.)},
+  Year                     = {1994},
+  Volume                   = {104}
+}
+
+@Article{stwalley1970dissociation,
+  Title                    = {The dissociation energy of the hydrogen molecule using long-range forces},
+  Author                   = {Stwalley, WC},
+  Journal                  = {Chemical Physics Letters},
+  Year                     = {1970},
+  Number                   = {3},
+  Pages                    = {241--244},
+  Volume                   = {6},
+
+  Publisher                = {Elsevier}
+}
+
+@Article{szalewicz1986new,
+  Title                    = {New Born--Oppenheimer potential energy curve and vibrational energies for the electronic ground state of the hydrogen molecule},
+  Author                   = {Szalewicz, Krzysztof and Monkhorst, Hendrik J and others},
+  Journal                  = {The Journal of chemical physics},
+  Year                     = {1986},
+  Number                   = {6},
+  Pages                    = {3278--3283},
+  Volume                   = {84},
+
+  Publisher                = {AIP Publishing}
+}
+
 @Book{thijssen2007computational,
   Title                    = {Computational Physics},
   Author                   = {Thijssen, J.M.},
@@ -12,62 +164,47 @@
   Url                      = {http://books.google.de/books?id=ThtNausKMn4C}
 }
 
-@article{james1933ground,
-  title={The ground state of the hydrogen molecule},
-  author={James, Hubert M and Coolidge, Albert Sprague},
-  journal={The Journal of Chemical Physics},
-  volume={1},
-  number={12},
-  pages={825--835},
-  year={1933},
-  publisher={AIP Publishing}
+@Article{traynor1991quantum,
+  Title                    = {A quantum Monte Carlo calculation of the ground state energy of the hydrogen molecule},
+  Author                   = {Traynor, Carol A and Anderson, James B and Boghosian, Bruce M},
+  Journal                  = {The Journal of chemical physics},
+  Year                     = {1991},
+  Number                   = {5},
+  Pages                    = {3657--3664},
+  Volume                   = {94},
+
+  Publisher                = {AIP Publishing}
 }
 
-@article{kolos1960accurate,
-  title = {Accurate Electronic Wave Functions for the H$_2$ Molecule},
-  author = {Kolos, W. and Roothaan, C. C. J.},
-  journal = {Reviews of Modern Physics},
-  volume = {32},
-  issue = {2},
-  pages = {219-232},
-  numpages = {0},
-  year = {1960},
-  month = {Apr},
-  publisher = {American Physical Society},
-  doi = {10.1103/RevModPhys.32.219},
-  url = {http://link.aps.org/doi/10.1103/RevModPhys.32.219}
+@Article{wolniewicz1983x,
+  Title                    = {The X 1$\Sigma$+ g state vibration-rotational energies of the H2, HD, and D2 molecules},
+  Author                   = {Wolniewicz, L},
+  Journal                  = {The Journal of Chemical Physics},
+  Year                     = {1983},
+  Number                   = {10},
+  Pages                    = {6173--6181},
+  Volume                   = {78},
+
+  Publisher                = {AIP Publishing}
 }
 
-@article{kolos1963nonadiabatic,
-  title={Nonadiabatic theory for diatomic molecules and its application to the hydrogen molecule},
-  author={Ko{\l}os, W and Wolniewicz, L},
-  journal={Reviews of Modern Physics},
-  volume={35},
-  number={3},
-  pages={473},
-  year={1963},
+@article{morse1929diatomic,
+  title={Diatomic molecules according to the wave mechanics. II. vibrational levels},
+  author={Morse, Philip M},
+  journal={Physical Review},
+  volume={34},
+  number={1},
+  pages={57},
+  year={1929},
   publisher={APS}
 }
-
-@article{kol1965potential,
-  title={Potential-Energy Curves for the $X^1\Sigma_g^+$, $b^3\sigma_u^+$, and $C^1\Pi_u$ states of the Hydrogen Molecule},
-  author={Kol, W and Wolniewicz, L and others},
-  journal={The Journal of Chemical Physics},
-  volume={43},
-  number={7},
-  pages={2429--2441},
-  year={1965},
-  publisher={AIP Publishing}
-}
-
-
-@article{kolos1968improved,
-  title={Improved Theoretical Ground-State Energy of the Hydrogen Molecule},
-  author={Kolos, W and Wolniewicz, L},
-  journal={The Journal of Chemical Physics},
-  volume={49},
-  number={1},
-  pages={404--410},
-  year={1968},
+@article{wolniewicz1995nonadiabatic,
+  title={Nonadiabatic energies of the ground state of the hydrogen molecule},
+  author={Wolniewicz, L},
+  journal={The Journal of chemical physics},
+  volume={103},
+  number={5},
+  pages={1792--1799},
+  year={1995},
   publisher={AIP Publishing}
 }

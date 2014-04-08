@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: vmc.aux
 The style file: plain.bst
 Database file #1: mybib.bib
-You've used 18 entries,
+You've used 19 entries,
             2118 wiz_defined-function locations,
-            611 strings with 6429 characters,
-and the built_in function-call counts, 5477 in all, are:
-= -- 551
-> -- 206
+            616 strings with 6586 characters,
+and the built_in function-call counts, 5748 in all, are:
+= -- 576
+> -- 224
 < -- 2
-+ -- 87
-- -- 64
-* -- 401
-:= -- 933
-add.period$ -- 54
-call.type$ -- 18
-change.case$ -- 79
++ -- 94
+- -- 70
+* -- 418
+:= -- 984
+add.period$ -- 57
+call.type$ -- 19
+change.case$ -- 85
 chr.to.int$ -- 0
-cite$ -- 18
-duplicate$ -- 199
-empty$ -- 458
-format.name$ -- 64
-if$ -- 1118
+cite$ -- 19
+duplicate$ -- 209
+empty$ -- 475
+format.name$ -- 70
+if$ -- 1171
 int.to.chr$ -- 0
-int.to.str$ -- 18
-missing$ -- 20
-newline$ -- 93
-num.names$ -- 36
-pop$ -- 64
+int.to.str$ -- 19
+missing$ -- 21
+newline$ -- 98
+num.names$ -- 38
+pop$ -- 70
 preamble$ -- 1
-purify$ -- 65
+purify$ -- 70
 quote$ -- 0
-skip$ -- 132
+skip$ -- 139
 stack$ -- 0
-substring$ -- 429
-swap$ -- 20
+substring$ -- 434
+swap$ -- 21
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 66
+type$ -- 70
 warning$ -- 0
-while$ -- 60
-width$ -- 20
-write$ -- 199
+while$ -- 62
+width$ -- 21
+write$ -- 209
