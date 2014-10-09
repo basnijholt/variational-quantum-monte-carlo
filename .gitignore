@@ -13,7 +13,8 @@ a# Compiled source #
 *-checkpoint.ipynb
 
 # FORTRAN data files #
-*.dat
+# *.dat 
+# ONE NEEDS THE DATA FILES FOR THE PYTHON OUTPUT
 
 # LaTex #
 *.aux
