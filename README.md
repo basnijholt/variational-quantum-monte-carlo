@@ -1,4 +1,4 @@
-# Variational Monte-Carlo
+# Variational Monte-Carlo to calculate the groud-state of:
 * $H_2$
 * Harmonic oscillator
 * Hydrogen atom
